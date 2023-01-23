@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weekly Routine</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body onload = "startTime()">
+    <div class="top__title">
+        <section class="greeting">
+            <h2 class="title">
+                What's up, <input type="text" id="name" placeholder="type your name here :D">
+            </h2>
+        </section >
+        <div id="time-container" class="time__container">
+            <div id="day-output" class="day"></div>
+            <div id="date-output"></div>
+            <div id="time-output" class="time"></div>
+        </div>
+    </div>
+    <div id="mode">
+        <!-- <svg class="mode_icon" xmlns="http://www.w3.org/2000/svg" width="32.173" height="36" viewBox="0 0 32.173 36">
+            <path id="to-dark" d="M19.913,36A17.965,17.965,0,0,0,33.9,29.335a.844.844,0,0,0-.813-1.361,14.1,14.1,0,0,1-9.616-26.11A.844.844,0,0,0,23.2.3,18,18,0,1,0,19.913,36Z" transform="translate(-1.913 0)" fill="#fff"/>
+          </svg> -->
+          <svg class="mode_icon" xmlns="http://www.w3.org/2000/svg" width="48px" height="48px" viewBox="0 0 29.944 29.944">
+            <path id="to-white" d="M31.5,19.185A13.5,13.5,0,1,1,16.815,4.5,10.5,10.5,0,0,0,31.5,19.185Z" transform="translate(-3.056 -3)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+          </svg>
+          
+    </div>
+
+
+
+
+    <div class="tabs">
+        <div class="tabs__sidebar">
+            <button class="tabs__button" data-for-tab="1">Workout</button>
+            <button class="tabs__button" data-for-tab="2">Diet</button>
+            <button class="tabs__button" data-for-tab="3">To Do</button>
+        </div>
+
+        <!-- TAB WORKOUT -->
+        <div class="tabs__content" data-tab="1">
+            <main class="app">
+                        <!-- <section class="greeting">
+                            <h2 class="title">
+                                What's up, <input type="text" id="name" placeholder="type your name here :D">
+                            </h2>
+                        </section> -->
+                        <section class="create-todo">
+                            <h3 class="todo__title">Your Weekly Workout</h3>
+                            <form id="new-todo-form">
+                                <h4>What's your next workout?</h4>
+                                <input type="text" name="content" id="content" placeholder="e.g. make 100 pushups">
+                                <h4>Pick a workout day of the week</h4>
+                                <div class="options">
+                                    <label>
+                                        <input class="radio" type="radio" name="category" id="category2" value="monday">
+                                        <span class="bubble business"></span>
+                                        <div>Monday</div>
+                                    </label>
+                                    <label>
+                                        <input class="radio" type="radio" name="category" id="category2" value="tuesday">
+                                        <span class="bubble business"></span>
+                                        <div>Tuesday</div>
+                                    </label>
+                                    <label>
+                                        <input class="radio" type="radio" name="category" id="category2" value="wednesday">
+                                        <span class="bubble business"></span>
+                                        <div>Wenesday</div>
+                                    </label>
+                                    <label>
+                                        <input class="radio" type="radio" name="category" id="category2" value="thursday">
+                                        <span class="bubble business"></span>
+                                        <div>Thursday</div>
+                                    </label>
+                                    <label>
+                                        <input class="radio" type="radio" name="category" id="category2" value="friday">
+                                        <span class="bubble business"></span>
+                                        <div>Friday</div>
+                                    </label>
+                                    <label>
+                                        <input class="radio" type="radio" name="category" id="category2" value="saturday">
+                                        <span class="bubble business"></span>
+                                        <div>Saturday</div>
+                                    </label>
+                                    <label>
+                                        <input class="radio" type="radio" name="category" id="category2" value="sunday">
+                                        <span class="bubble business"></span>
+                                        <div>Sunday</div>
+                                    </label>
+                                </div>
+                                <input type="submit" value="Add workout">
+                            </form>
+                        </section>
+
+                        <div class="todo-container ">
+                            <section class="todo-list">
+                                <h3 class="todo__title-white monday">Monday</h3>
+                                <div class="list" id="monday"></div>
+
+                            </section>
+                            <section class="todo-list">
+                                <h3 class="todo__title-white tuesday">Tuesday</h3>
+                                <div class="list" id="tuesday"></div>
+                            </section>
+                            <section class="todo-list">
+                                <h3 class="todo__title-white wednesday">Wednesday</h3>
+                                <div class="list" id="wednesday"></div>
+                            </section>
+                            <section class="todo-list">
+                                <h3 class="todo__title-white thursday">Thursday</h3>
+                                <div class="list" id="thursday"></div>
+                            </section>
+                            <section class="todo-list">
+                                <h3 class="todo__title-white friday">Friday</h3>
+                                <div class="list" id="friday"></div>
+                            </section>
+                            <section class="todo-list">
+                                <h3 class="todo__title-white saturday">Saturday</h3>
+                                <div class="list" id="saturday"></div>
+                            </section>
+                            <section class="todo-list">
+                                <h3 class="todo__title-white sunday">Sunday</h3>
+                                <div class="list" id="sunday"></div>
+                            </section>
+                        </div>
+            </main>
+
+        </div>
+
+
+    <!-- TAB DIET-->
+        <div class="tabs__content" data-tab="2">
+            <main class="app-diet">
+                <!-- <section class="greeting">
+                    <h2 class="title">
+                        What's up, <input type="text" id="name" placeholder="type your name here :D">
+                    </h2>
+                </section> -->
+                <section class="create-todo-diet">
+                    <h3 class="todo__title-diet">Your Weekly Diet</h3>
+                    <form id="new-todo-form-diet">
+                        <h4>What's your next meal?</h4>
+                        <input type="text" name="content_diet" id="content_diet" placeholder="e.g. Carbonara">
+                        <h4>Pick a diet day of the week</h4>
+                        <div class="options__diet">
+                            <label>
+                                <input class="radio" type="radio" name="category_diet" id="category__diet" value="monday__diet">
+                                <span class="bubble business"></span>
+                                <div>Monday</div>
+                            </label>
+                            <label>
+                                <input class="radio" type="radio" name="category_diet" id="category__diet" value="tuesday__diet">
+                                <span class="bubble business"></span>
+                                <div>Tuesday</div>
+                            </label>
+                            <label>
+                                <input class="radio" type="radio" name="category_diet" id="category__diet" value="wednesday__diet">
+                                <span class="bubble business"></span>
+                                <div>Wednesday</div>
+                            </label>
+                            <label>
+                                <input class="radio" type="radio" name="category_diet" id="category__diet" value="thursday__diet">
+                                <span class="bubble business"></span>
+                                <div>Thursday</div>
+                            </label>
+                            <label>
+                                <input class="radio" type="radio" name="category_diet" id="category__diet" value="friday__diet">
+                                <span class="bubble business"></span>
+                                <div>Friday</div>
+                            </label>
+                            <label>
+                                <input class="radio" type="radio" name="category_diet" id="category__diet" value="saturday__diet">
+                                <span class="bubble business"></span>
+                                <div>Saturday</div>
+                            </label>
+                            <label>
+                                <input class="radio" type="radio" name="category_diet" id="category__diet" value="sunday__diet">
+                                <span class="bubble business"></span>
+                                <div>Sunday</div>
+                            </label>
+                        </div>
+                        <input type="submit" value="Add meal">
+                    </form>
+                </section>
+
+                <div class="todo-container-diet">
+                    <section class="todo-list-diet">
+                        <h3 class="todo__title-white monday">Monday</h3>
+                        <div class="list" id="monday__diet"></div>
+
+                    </section>
+                    <section class="todo-list-diet">
+                        <h3 class="todo__title-white tuesday">Tuesday</h3>
+                        <div class="list" id="tuesday__diet"></div>
+                    </section>
+                    <section class="todo-list-diet">
+                        <h3 class="todo__title-white wednesday">Wednesday</h3>
+                        <div class="list" id="wednesday__diet"></div>
+                    </section>
+                    <section class="todo-list-diet">
+                        <h3 class="todo__title-white thursday">Thursday</h3>
+                        <div class="list" id="thursday__diet"></div>
+                    </section>
+                    <section class="todo-list-diet">
+                        <h3 class="todo__title-white friday">Friday</h3>
+                        <div class="list" id="friday__diet"></div>
+                    </section>
+                    <section class="todo-list-diet">
+                        <h3 class="todo__title-white saturday">Saturday</h3>
+                        <div class="list" id="saturday__diet"></div>
+                    </section>
+                    <section class="todo-list-diet">
+                        <h3 class="todo__title-white sunday">Sunday</h3>
+                        <div class="list" id="sunday__diet"></div>
+                    </section>
+                </div>
+    </main>
+
+        </div>
+    <!-- TAB TODO-->
+        <div class="tabs__content" data-tab="3">
+            <main class="app-todo">
+                <!-- <section class="greeting">
+                    <h2 class="title">
+                        What's up, <input type="text" id="name" placeholder="type your name here :D">
+                    </h2>
+                </section> -->
+                <section class="create__todo">
+                    <h3 class="todo__title-todo">Your Weekly Diet</h3>
+                    <form id="new-todo">
+                        <h4>What's next work to do?</h4>
+                        <input type="text" name="content_todo" id="content_todo" placeholder="e.g. Reed some books">
+                        <h4>Pick when you need to do your work</h4>
+                        <div class="options__todo">
+                            <label>
+                                <input class="radio" type="radio" name="category__todo" id="cate__todo" value="now">
+                                <span class="bubble personal"></span>
+                                <div>Now</div>
+                            </label>
+                            <label>
+                                <input class="radio" type="radio" name="category__todo" id="cate__todo" value="later">
+                                <span class="bubble business"></span>
+                                <div>Later</div>
+                            </label>
+                        </div>
+                        <input type="submit" value="Add todo">
+                    </form>
+                </section>
+
+                <div class="todo-container-todo">
+                    <section class="todo-list-todo">
+                        <h3 class="todo__title-white">TO DO</h3>
+                        <div class="list" id="todo"></div>
+                    </section>
+                </div>
+    </main>
+        </div>
+    </div>
+
+    <script src="/js/main.js"></script>
+    <script src="/js/workout.js"></script>
+    <script src="/js/diet.js"></script>
+    <script src="/js/todo.js"></script>
+</body>
+
+</html>
